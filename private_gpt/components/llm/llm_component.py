@@ -20,6 +20,7 @@ class LLMComponent:
                 self.llm = LlamaCPP(
                     model_path=str(models_path / settings.local.llm_hf_model_file),
                     temperature=0.1,
+                    max_new_tokens= 3850,  # to review defaults
                     # llama2 has a context window of 4096 tokens,
                     # but we set it lower to allow for some wiggle room
                     context_window=3900,
